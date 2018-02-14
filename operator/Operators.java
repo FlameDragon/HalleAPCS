@@ -1,16 +1,16 @@
 class Operators {
     public static void main(String args[]) { 
-        //String fullName = "Halle Wong";
-       // System.out.println(fullName);//String firstName = "YOURNAME";
-    //String lastName = "YOURLASTNAME";
-    //String fullName = firstName + " " + lastName;
+        //String noun1 = "Halle Wong";
+       // System.out.println(noun1);//String firstName = "YOURNAME";
+    //String noun3 = "YOURnoun3";
+    //String noun1 = firstName + " " + noun3;
 
     //System.out.println(firstName);
     //System.out.println("firstName");
-    //System.out.println(lastName);
-    //System.out.println("lastName");
-    //System.out.println(fullName);
-    //System.out.println("fullName");
+    //System.out.println(noun3);
+    //System.out.println("noun3");
+    //System.out.println(noun1);
+    //System.out.println("noun1");
 //int currentYear = 2018;
    // int yearsUntilGraduation = 2;
    // int myGradYear = currentYear + yearsUntilGraduation;
@@ -98,7 +98,53 @@ Boolean hasgirlfriend = false;
     Boolean hasjob = false;
    
     if(!hasgirlfriend||hasMoney||hasjob) {
-        System.out.println("Still good at chess.");
+        System.out.println("I am Still good at chess.");
+
+String noun1 = "Imagine";   
+String noun2 = "Dragons";
+String noun3 = "has";
+String noun4 = "over";   
+String noun5 = "70";
+String noun6 = "songs";
+String noun7 = ".";   
+String noun8 = "All";
+String noun9 = "are";
+String noun10 = "amazing";   
+String noun11= "and";
+String noun12= "have";
+String noun13= "great";   
+String noun14= "lyrics";
+String noun15= ".";
+
+System.out.println(noun1);
+System.out.println(noun2);
+System.out.println(noun3);
+System.out.println(noun4);
+System.out.println(noun5);
+System.out.println(noun6);
+System.out.println(noun7);
+System.out.println(noun8);
+System.out.println(noun9);
+System.out.println(noun10);
+System.out.println(noun11);
+System.out.println(noun12);
+System.out.println(noun13);
+System.out.println(noun14);
+System.out.println(noun15);
+
+int targetsavingsgoal =  100;
+int savingspermonth = 10;
+    int monthsuntilgoalreached = targetsavingsgoal / savingspermonth;
+    System.out.println(monthsuntilgoalreached);
+    
+
+
+
+
+
+
+
+
     }
     
 }
