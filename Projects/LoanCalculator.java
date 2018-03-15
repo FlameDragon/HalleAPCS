@@ -158,15 +158,19 @@ public static void compoundinginterestwithpayment() { Scanner scan;
             }
             //If it reaches here, the input was invalid. Loop again.
         }
+        int months = loanTerm * 12;
         double rate1 = interestRate * .01;
 double rate = rate1 /12;
 double monthlyPayment = 1 + loanAmt * (rate / (1 - Math.pow((1 + rate), (loanTerm * -12))));
-double needTopay = monthlyPayment * loanTerm * 12   
+double needTopay = monthlyPayment * loanTerm * 12 - months;  
+double lastPayment = needTopay - monthlyPayment * (months);
+double pureinterest = needTopay - loanAmt;
    System.out.println("loan amount " + loanAmt);
    System.out.println("loan term " + loanTerm);
    System.out.println("interest rate " + interestRate);
     System.out.println("You pay a month $ " + monthlyPayment);
-     System.out.println("You pay a total of $ " + monthlyPayment);
+     System.out.println("You pay a total of $ " + needTopay);
+System.out.println("You pay a interest of $ " + pureinterest);
     }
     public static void printModeStatement() {
         System.out.print(
