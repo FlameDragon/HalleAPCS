@@ -4,12 +4,11 @@ class Plinko {
     public static final int SINGLE_DISC = 1;
     public static final int MULTI_DISC = 2;
     public static final int TERMINATE = 3;
-
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
-
     public static int mode = -1;
-public static int position = 0;
+    public static int position = 0;
     public static void main(String[] args) {
+        int slot = -1;
         Scanner scan;
         while(true) {
             //Loop to select mode.
@@ -19,9 +18,45 @@ public static int position = 0;
             if(scan.hasNextInt()) {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) { 
-                    for (int i = 0; i <=5; i++) {
-                    printEvenRow(position);
-                    printOddRow(position); }
+                    while(true) { //Loop the mode selection menu until a valid input is provided
+                        scan = new Scanner(System.in);
+                        System.out.println("Enter a slot for the disc ");
+                        if(scan.hasNextInt()) { 
+                            position = scan.nextInt();
+                            if(position > 0 && position < 9) { 
+                                slot = position * 2;
+                                break; //Valid input has been provided. Break out of the while loop
+                            }
+                        }
+                    }
+                     printEvenRow(slot);
+                    for (int x = 0; x <=5; x++) {
+                    for (int i = 0; i <=0; i++) 
+                        { if(Math.random() > .5) {
+                             slot ++;
+                             } else {
+                             slot--;
+                             }
+                        printOddRow(slot); 
+                        
+                    }
+                    for (int i = 0; i <=0; i++) 
+                        { if(Math.random() > .5) {
+                             slot ++;
+                             } else {
+                             slot--;
+                             }
+                        for (int y = 0; y <=0; y++) 
+                        { if(Math.random() > .5) {
+                             slot ++;
+                             } else {
+                             slot--;
+                             }
+                        printEvenRow(slot); 
+                        
+                    } 
+                        }   
+                    }
                 }
                 else if(mode == MULTI_DISC) {
                     System.out.println("Mode not yet implemented");
@@ -36,34 +71,34 @@ public static int position = 0;
         }
     }
 
-    public static void printOddRow(int position) {
-         for(int i = 0; i <= 16; i++) {
-        if(position == i) {
-            System.out.print("O");
+    public static void printOddRow(int slot) {
+        for(int i = 0; i <= 16; i++) {
+            if(slot == i) {
+                System.out.print("O");
+            }
+            else if(isEven(i)) {
+                System.out.print(".");
+            }
+            else {
+                System.out.print(" ");
+            }
         }
-        else if(isEven(i)) {
-            System.out.print(" ");
-        }
-        else {
-            System.out.print(".");
-        }
-    }
-    System.out.print("\n");
+        System.out.print("\n");
     }
 
-    public static void printEvenRow(int position) {
+    public static void printEvenRow(int slot) {
         for(int i = 0; i <= 16; i++) {
-        if(position == i) {
-            System.out.print("O");
+            if(slot == i) {
+                System.out.print("O");
+            }
+            else if(isEven(i)) {
+                System.out.print(" ");
+            }
+            else {
+                System.out.print(".");
+            }
         }
-        else if(isEven(i)) {
-            System.out.print(".");
-        }
-        else {
-            System.out.print(" ");
-        }
-    }
-    System.out.print("\n");
+        System.out.print("\n");
     }
 
     public static Boolean isEven(int x) {
